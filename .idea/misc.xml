@@ -6,9 +6,10 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/mq/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/mq/pom.xml" />
+        <option value="$PROJECT_DIR$/redis/pom.xml" />
       </list>
     </option>
   </component>
