@@ -11,7 +11,7 @@
     <groupId>com</groupId>
     <artifactId>test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>test</name>
+    <name>rest-template</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

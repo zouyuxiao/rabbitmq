@@ -38,16 +38,12 @@ public class TestController {
         restTemplate post json格式
         使用阿里巴巴的json包 com.alibaba.fastjson
         代码demo如下：
-
         url='http://posturl';JSONObject postData = new JSONObject();
         postData.put("shopid", 1);
         JSONObject json = restTemplate.postForEntity(url, postData, JSONObject.class).getBody();
 
         如果要使用post formdata形式则需要
         使用RestTemplate发送multipart/form-data格式的数据
-
-        复制代码
-
         String url = 'http://posturl';
         MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
         map.add("shopid","1");
@@ -56,12 +52,7 @@ public class TestController {
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
         return restTemplate.postForEntity(url, request,String.class);
 
-        复制代码
-
         对header进行请求头设置，如果不设置也可以直接post那么就是如下的
-
-        复制代码
-
         String url = 'http://posturl';
         MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
         map.add("shopid","1");
