@@ -1,16 +1,14 @@
-package com.redis;
+package com.webservice;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-@Ignore
-class RedisApplicationTests {
+class WebserviceApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("测试");
+        System.out.println(123);
     }
 
 }
