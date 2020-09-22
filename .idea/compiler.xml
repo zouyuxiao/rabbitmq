@@ -6,25 +6,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="consumer" />
         <module name="redis" />
-        <module name="provider" />
+        <module name="webservice" />
+        <module name="rest-template" />
+        <module name="rabbitmq-provider" />
         <module name="mq" />
+        <module name="rabbitmq-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="consumer" target="1.8" />
       <module name="mq" target="1.8" />
-      <module name="provider" target="1.8" />
+      <module name="rabbitmq-consumer" target="1.8" />
+      <module name="rabbitmq-provider" target="1.8" />
       <module name="redis" target="1.8" />
+      <module name="rest-template" target="1.8" />
+      <module name="webservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="consumer" options="-parameters" />
       <module name="mq" options="-parameters" />
-      <module name="provider" options="-parameters" />
+      <module name="rabbitmq-consumer" options="-parameters" />
+      <module name="rabbitmq-provider" options="-parameters" />
       <module name="redis" options="-parameters" />
+      <module name="rest-template" options="-parameters" />
+      <module name="webservice" options="-parameters" />
     </option>
   </component>
 </project>
