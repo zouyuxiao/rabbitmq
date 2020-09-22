@@ -1,31 +1,46 @@
 package com.webservice.config;
-import javax.xml.ws.Endpoint;
-import com.webservice.service.CommonService;
+
+import com.webservice.service.DemoService;
+import com.webservice.service.impl.DemoServiceImpl;
 import org.apache.cxf.Bus;
+import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.jaxws.EndpointImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.cxf.transport.servlet.CXFServlet;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.xml.ws.Endpoint;
+
 /**
- * @Description
+ * @Description 访问地址：http://localhost:8028/demo/api?wsdl 列出在services下的所有服务列表
  * @Author zouyuxiao
- * @Date 2020-09-21 16:20
+ * @Date 2020-09-22 15:04
  */
 
-@Configuration
+//@Configuration
 public class CxfConfig {
-    @Autowired
-    private Bus bus;
 
-    @Autowired
-    CommonService commonService;
+    @Bean
+    public ServletRegistrationBean disServlet() {
+        return new ServletRegistrationBean(new CXFServlet(),"/demo/*");
+    }
 
-    /** JAX-WS **/
+    @Bean(name = Bus.DEFAULT_BUS_ID)
+    public SpringBus springBus() {
+        return new SpringBus();
+    }
+
+    @Bean
+    public DemoService demoService() {
+        return new DemoServiceImpl();
+    }
+
     @Bean
     public Endpoint endpoint() {
-        EndpointImpl endpoint = new EndpointImpl(bus, commonService);
-        endpoint.publish("/CommonService");
+        EndpointImpl endpoint = new EndpointImpl(springBus(), demoService());
+        endpoint.publish("/api");
         return endpoint;
     }
+
 }
