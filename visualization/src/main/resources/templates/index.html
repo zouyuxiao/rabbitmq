@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>Spring Boot中使用ECharts</title>
+    <!--<script src="https://cdn.bootcss.com/echarts/4.6.0/echarts.min.js"></script>-->
+    <script src="js/echarts.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<h1>你好啊-可视化</h1>
+<div id="main" style="width: 1000px;height:400px;"></div>
+
+<div id="main2" style="width: 1000px;height:400px;"></div>
+</body>
+
+<script type="text/javascript">
+    var xData=new Array(),yData=new Array();
+    $.ajax({
+        url:"/user/list",
+        type:"get",
+        async:false,
+        success:function (result) {
+            let data = result.data
+            for (let i = 0; i < data.length; i++) {
+                xData[i] = data[i].username;
+                yData[i] = data[i].age;
+            }
+            console.log("xData-->"+xData);
+            console.log("yData-->"+yData);
+            return xData,yData;
+        }
+    })
+
+    console.log("xData-------------->>>"+xData)
+    console.log("yData-------------->>>"+yData)
+
+    // 初始化ECharts组件到id为main的元素上
+    let myChart = echarts.init(document.getElementById('main'));
+    // 定义图标的配置项
+    let option = {
+        title: {
+            text: 'Spring Boot中使用ECharts'
+        },
+        tooltip: {},
+        // x轴配置
+        xAxis: {
+            // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            data:xData
+        },
+        // y轴配置
+        yAxis: {},
+        series: [{
+            // 数据集（也可以从后端的Controller中传入）
+            // data: [820, 932, 901, 934, 1290, 1330, 1320],
+            data: yData,
+            // 图表类型，这里使用line，为折线图
+            type: 'line'
+        }]
+    };
+    myChart.setOption(option);
+
+    // 初始化ECharts组件到id为main的元素上
+    let myChart2 = echarts.init(document.getElementById('main2'));
+    // 定义图标的配置项
+    let option2 = {
+        title: {
+            text: 'Spring Boot中使用ECharts'
+        },
+        tooltip: {},
+        // x轴配置
+        xAxis: {
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        // y轴配置
+        yAxis: {},
+        series: [{
+            // 数据集（也可以从后端的Controller中传入）
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            // 图表类型，这里使用line，为折线图
+            type: 'line'
+        }]
+    };
+    myChart2.setOption(option2);
+</script>
+</html>
