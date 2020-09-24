@@ -1,0 +1,27 @@
+#端口
+server:
+  port: 8035
+spring:
+  # 数据源
+  profiles:
+    active: druid
+#   thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+  #jpa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+# MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.cache.bean
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
