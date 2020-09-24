@@ -1,5 +1,5 @@
 # rabbitmq
-mq 项目集成了rabbitmq几种基本模式
-集成了springboot
-redis 
+mq 项目集成了rabbitmq几种基本模式  
+集成了springboot  
+redis   
 RestTemplate是Spring提供的用于访问Rest服务的客户端，RestTemplate提供了多种便捷访问远程Http服务的方法,能够大大提高客户端的编写效率。
