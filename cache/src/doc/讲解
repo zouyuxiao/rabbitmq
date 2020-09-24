@@ -1,0 +1,25 @@
+依赖
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-cache</artifactId>
+</dependency>
+开启注解缓存
+在启动类上加入 @EnableCaching
+
+缓存注解
+@Cacheable ：对方法结果进行缓存（主要用于GET方法）
+cacheNames/value:指定缓存主键（Cache）的名字
+key:缓存数据使用key，支持spEl语法
+keyGenerator:key的生成器。与key属性冲突，自定义 keyGenerator 必须实现org.springframework.cache.interceptor.KeyGenerator,default使用默认的参数值生成器
+cacheManager:指定缓存管理器，或者cacheResolver指定获取解析器
+cacheResolver: 与CacheManager冲突
+condition：指定条件满足才缓存，与unless相反。可以使用spEL语法
+unless：否定缓存，当满足条件时，结果不被缓存。可以获取到结果（#result）进行判断。支持spEL语法
+sync：是否异步模式。在该模式下unless不被支持。default=false
+@CachePut:先调用方法，在对结果进行缓存。（主要用于PUT方法），需要注意key的设置
+@CacheEvict:默认先调用方法，在删除缓存（主要用于DELETE方法）
+allEntries: 删除缓存组件中（cacheNames/value指定）所有的值
+beforeInvocation：在方法执行之前删除值，default=false
+@Caching：组合注解。针对复杂情况
+@CacheConfig：加载类上，用于设置缓存的共有属性
+
