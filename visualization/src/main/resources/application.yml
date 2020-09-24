@@ -5,7 +5,14 @@ spring:
   # สýพÝิด
   profiles:
     active: druid
-
+  # thymeleaf
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    check-template: true
+#    suffix: .html
+#    encoding: UTF-8
+#    mode: HTML5
+#    cache: false
 
 # MyBatis
 mybatis:

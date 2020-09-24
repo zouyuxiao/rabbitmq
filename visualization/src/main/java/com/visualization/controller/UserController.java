@@ -29,8 +29,5 @@ public class UserController extends BaseApiController {
         return onDataResp(list);
     }
 
-    @RequestMapping("/hello")
-    public String hello(){
-        return "你好";
-    }
+
 }
