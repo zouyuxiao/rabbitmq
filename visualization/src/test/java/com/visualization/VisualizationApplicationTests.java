@@ -25,6 +25,9 @@ class VisualizationApplicationTests {
     public void list(){
         List<User> list = userService.list();
         System.out.println(list);
+
+        List<User> list1 = userService.findById((long) 1);
+        System.out.println(list1);
     }
 
 }

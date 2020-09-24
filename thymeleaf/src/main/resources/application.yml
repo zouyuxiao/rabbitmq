@@ -1,0 +1,5 @@
+server:
+  port: 8037
+spring:
+  profiles:
+    active: druid

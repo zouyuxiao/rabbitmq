@@ -13,7 +13,7 @@ import java.util.List;
  * @Author zouyuxiao
  * @Date 2020-09-23 11:19
  */
-@Service
+@Service("user")
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -22,5 +22,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> list() {
         return userDao.list();
+    }
+
+    @Override
+    public List<User> findById(Long id) {
+        return userDao.findById(id);
+    }
+
+    @Override
+    public User findById2(Long id) {
+        return userDao.findById2(id);
     }
 }

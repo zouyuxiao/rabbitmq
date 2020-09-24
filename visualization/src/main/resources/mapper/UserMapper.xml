@@ -7,4 +7,12 @@
         SELECT * FROM user
     </select>
 
+    <select id="findById" resultType="User">
+        SELECT * FROM user where id=#{id}
+    </select>
+
+    <select id="findById2" resultType="User">
+        SELECT * FROM user where id=#{id}
+    </select>
+
 </mapper>

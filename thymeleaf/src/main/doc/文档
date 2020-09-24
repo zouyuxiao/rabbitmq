@@ -1,0 +1,70 @@
+th:each属性用于迭代循环，语法：th:each="obj,iterStat:${objList}"
+迭代对象可以是Java.util.List,java.util.Map,数组等;
+iterStat称作状态变量，属性有：
+    index:当前迭代对象的index（从0开始计算）
+    count: 当前迭代对象的index(从1开始计算)
+    size:被迭代对象的大小
+    current:当前迭代变量
+    even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算）
+    first:布尔值，当前循环是否是第一个
+    last:布尔值，当前循环是否是最后一个
+
+
+
+
+我们知道要想通过th:field取值，前面必须要有th:object;  th:object表示获取的表单或者后台数据对象；th:field只是从该对象中取出响应的属性；
+
+<form id="form1" th:object="${animal}">
+    <input id="partId" name="partId" th:field="*{age}"/>
+</form>
+
+其中的*{age}取的就是animal对象中的age属性所对应的值
+
+
+当你想在js文件中获取th:field的值：
+
+[[${th:Object的值.th:field的值}]]
+
+例如：
+[[${animal.age}]]
+当你想直接在<input>中通过函数传参，其中一个参数是th:field的值的情况：
+
+需要先写一个th:value=${th:field中的值},然后在通过attr（）获取该value属性的值：
+
+<form id="form1" th:object="${animal}">
+    <input id="animalAge" name="animalAge" th:field="*{age}" th:value="${age}"
+            onclick="function getAge(){alert($('animalAge').attr('value'))}"/>
+</form>
+
+注意：onclick()中的attr()中字符就是value；
+因为th:value在编译后会被编译成 value;
+由于th:field在编译后会被编译成name，所以不能通过attr('th:field')获取到；
+
+
+通常需要从后端拉取数据形成下拉框
+当返回元素是 list userNameList = userServiceImpl.findUserName()
+
+<select>
+	<option	th:each="value,iter:${@userServiceImpl.findUserName() }" th:value="${value}"></option>
+</select>
+
+当查询的集合元素是map时如下取值
+List<Map<String,Object>> list =userServiceImpl.findUserKeyValue()
+
+<select>
+	<option th:each="map,iter:${@userServiceImpl.findUserKeyValue()}" th:value="${map.key}"	th:text="${map.value}"></option>
+</select>
+
+也可使用th:with
+
+<select th:with="users = ${@userServiceImpl.findUser(user.deptid) }">
+	<option	th:each="user:${users}" th:value=${user.name}  th:text=${user.name}></option>
+</select>
+
+参数传递不需要${}，具体参数取值方式视情况而言
+
+上面两种方法一个是直接遍历获取的集合，另一个是先获取集合对象，在遍历集合
+
+thymeleaf将后台date日期转为指定格式
+
+< th:text = "${#dates.format(user.Date,'YYYY-MM-dd HH:mm:ss')}">

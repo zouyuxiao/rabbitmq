@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Thymeleaf</h1>
+    <h3 th:text="${hello}">扑街嘚</h3>
+    <ul th:each="list:${lists} ">
+        <li th:text="${list}"></li>
+    </ul>
+    <ul>
+        <li>Map循环：
+            <div th:each="mapS:${maps}">
+                <div th:text="${mapS}"></div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

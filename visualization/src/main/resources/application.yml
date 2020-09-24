@@ -1,22 +1,27 @@
-#¶Ë¿Ú
+#ç«¯å£
 server:
   port: 8031
 spring:
-  # Êı¾İÔ´
+  # æ•°æ®æº
   profiles:
     active: druid
   # thymeleaf
-#  thymeleaf:
-#    prefix: classpath:/templates/
-#    check-template: true
-#    suffix: .html
-#    encoding: UTF-8
-#    mode: HTML5
-#    cache: false
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
 
 # MyBatis
 mybatis:
-  # ËÑË÷Ö¸¶¨°ü±ğÃû
+  # æœç´¢æŒ‡å®šåŒ…åˆ«å
   typeAliasesPackage: com.visualization.bean
-  # ÅäÖÃmapperµÄÉ¨Ãè£¬ÕÒµ½ËùÓĞµÄmapper.xmlÓ³ÉäÎÄ¼ş
+  # é…ç½®mapperçš„æ‰«æï¼Œæ‰¾åˆ°æ‰€æœ‰çš„mapper.xmlæ˜ å°„æ–‡ä»¶
   mapperLocations: classpath*:mapper/*Mapper.xml
+  configuration:
+    #å¼€å¯é©¼å³°å‘½åè½¬æ¢
+    map-underscore-to-camel-case: true
+    #æ‰“å°sql(è¯­å¥)ï¼Œæ–¹ä¾¿è°ƒè¯•
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

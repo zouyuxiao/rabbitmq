@@ -1,6 +1,7 @@
 package com.visualization.service;
 
 import com.visualization.bean.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -9,6 +10,9 @@ import java.util.List;
  * @Author zouyuxiao
  * @Date 2020-09-23 11:18
  */
+
 public interface UserService {
     List<User> list();
+    List<User> findById(Long id);
+    User findById2(Long id);
 }
