@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>遍历list</title>
+    <link rel="icon" href="/img/favicon.ico" type="images/x-ico"/>
 </head>
 <body>
     <ol>
@@ -37,8 +38,19 @@
     </ol>
     <hr/>
     <form th:object="${users}">
+        <h3>你好吗</h3>
         <input name="username" th:field="*{username}">
-        <input name="birthday" th:value="${#dates.format(users.regTime, 'yyyy-MM-dd')}">
+        <input name="username" th:field="*{regTime}">
+        <input name="username" th:field="*{age}">
+        <input name="birthday" th:value="${#dates.format(users.regTime, 'yyyy:MM:DD hh:mm:ss')}">
+        <h3>传值</h3>
+        <div th:with="type=${@user.findById(users.id)}">
+            <ul  th:each="user : ${type}">
+                <li th:text="${user.username}"></li>
+                <li th:text="${user.age}"></li>
+                <li th:text="${user.regTime}"></li>
+            </ul>
+        </div>
     </form>
     <hr/>
     <div>
@@ -55,7 +67,14 @@
             </select>
         </form>
     </div>
-
-
+    <hr/>
+    <a href="/localStorage.html">跨页面传值-localStorage</a>
 </body>
+<script>
+    // 获取model值
+    var uId = [[${users.id}]];
+    console.log("id------------->"+uId);
+
+    localStorage.setItem("id",uId);//key要用单引号或者双引号包括着，value就是你要存的数据
+</script>
 </html>

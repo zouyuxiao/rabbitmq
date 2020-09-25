@@ -1,8 +1,9 @@
 package com.visualization.bean;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 /**
  * @Description
@@ -15,7 +16,7 @@ public class User {
     private String username;
     private String password;
     private Integer age;
-    private Data regTime;
+    private Date regTime;
 
     @Override
     public String toString() {
@@ -28,11 +29,11 @@ public class User {
                 '}';
     }
 
-    public Data getRegTime() {
+    public Date getRegTime() {
         return regTime;
     }
 
-    public void setRegTime(Data regTime) {
+    public void setRegTime(Date regTime) {
         this.regTime = regTime;
     }
 

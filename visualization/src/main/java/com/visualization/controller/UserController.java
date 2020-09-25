@@ -42,12 +42,15 @@ public class UserController extends BaseApiController {
         System.out.println("=========>"+list1);
         modelMap.addAttribute("list1",list1);
 
-        User user = userService.findById2((long) 1);
+        User user = userService.findById2((long) 3);
         modelMap.addAttribute("users",user);
         return "thymeleaf/list";
     }
 
-
+    @GetMapping("/list3")
+    public String list3(ModelMap modelMap){
+        return "thymeleaf/localStorage";
+    }
 
 
 }

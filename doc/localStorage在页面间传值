@@ -1,0 +1,14 @@
+用localStorage在页面间传值
+注意：要在同一域名下的页面才有效
+
+在需要存储数据页面用localStorage设置数据
+
+localStorage.setItem(key,value);//key要用单引号或者双引号包括着，value就是你要存的数据
+在需要引用数据的页面用localStorage获取数据
+
+var name=localStorage.getItem(key);//key要用单引号或者双引号包括着,用一变量存起来方便使用
+删除数据，因为localStorage是可长期存储数据的，所以如果用完后不再需要的话，可以顺手销毁掉
+
+localStorage.removeItem(key);//删除单个数据
+localStorage.clear();//删除所有数据
+localStorage.key(index);//得到某个索引的key

@@ -13,6 +13,12 @@ spring:
     encoding: UTF-8
     mode: HTML5
     cache: false
+  # 时间戳
+  jackson:
+#    serialization: true
+    date-format: yyyy-MM-DD hh:mm:ss
+    time-zone: GMT+
+
 
 # MyBatis
 mybatis:

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/img/favicon.ico" type="images/x-ico"/>
+    <title>取值</title>
+</head>
+<body>
+    <h1>localStorage取值</h1>
+</body>
+<script>
+    var name=localStorage.getItem("id");//key要用单引号或者双引号包括着,用一变量存起来方便使用
+    console.log(name)
+    console.log(localStorage.removeItem("id"))
+    console.log(localStorage.clear())
+    console.log(localStorage.key(index))
+    /*localStorage.removeItem("id");//删除单个数据
+    localStorage.clear();//删除所有数据
+    localStorage.key(index);//得到某个索引的key*/
+</script>
+</html>

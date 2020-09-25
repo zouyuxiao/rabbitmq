@@ -1,6 +1,7 @@
 package com.visualization.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -21,4 +22,13 @@ public class MainController extends BaseController {
         return page;
     }
 
+    @GetMapping("/thymeleaf/{page}")
+    public String thymeleaf(@PathVariable String page){
+        return "/thymeleaf/" + page;
+    }
+
+    @GetMapping("/hello/{page}")
+    public String hello(@PathVariable String page){
+        return "/thymeleaf/" + page;
+    }
 }
