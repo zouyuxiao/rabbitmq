@@ -18,3 +18,5 @@ cache缓存
 
 thymeleaf
 visualization 模板引擎
+
+Demo 枚举
