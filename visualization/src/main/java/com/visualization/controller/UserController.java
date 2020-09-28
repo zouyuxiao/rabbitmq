@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Map;
@@ -33,10 +34,11 @@ public class UserController extends BaseApiController {
     }
 
     @GetMapping("/list2")
-    public String list2(ModelMap modelMap){
+    public String list2(ModelMap modelMap, ModelAndView modelAndView){
         List<User> list = userService.list();
         System.out.println("=====>"+list);
         modelMap.addAttribute("users",list);
+        modelAndView.addObject("userList", list);
 
         List<User> list1 = userService.findById((long) 1);
         System.out.println("=========>"+list1);
@@ -52,5 +54,19 @@ public class UserController extends BaseApiController {
         return "thymeleaf/localStorage";
     }
 
+    @GetMapping("/list4")
+    public ModelAndView index() {
+        List<User> userList = userService.list();
+        // 参数： 1 跳转页面， 2前端接收 ， 3 需要传的值
+        return new ModelAndView("thymeleaf/user", "userList", userList);
+    }
 
+    @RequestMapping("/selectUserList")
+    public ModelAndView selectUserList() throws Exception {
+        ModelAndView modelAndView = new ModelAndView();
+        List<User> userList = userService.list();
+        modelAndView.addObject("userList",userList);
+        modelAndView.setViewName("thymeleaf/user");
+        return modelAndView;
+    }
 }

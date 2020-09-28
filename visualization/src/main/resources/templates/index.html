@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" >
     <meta charset="UTF-8" />
     <title>Spring Boot中使用ECharts</title>
     <!--<script src="https://cdn.bootcss.com/echarts/4.6.0/echarts.min.js"></script>-->
@@ -8,10 +8,19 @@
     <script src="js/jquery.min.js"></script>
 </head>
 <body>
+
 <h1>你好啊-可视化</h1>
 <div id="main" style="width: 1000px;height:400px;"></div>
 
 <div id="main2" style="width: 1000px;height:400px;"></div>
+<hr/>
+<div th:each="user:${userList}">
+    <!-- 序号：<input type="text" th:value="${userStat.count}"/>-->
+    账号11：<input type="text" th:value="${user.username}"/>
+    密码：<input type="password" th:value="${user.password}"/>
+    时间：<input type="text" th:value="${user.createTime}"/>
+    时间：<input type="text" th:value="${#dates.format(user.createTime,'yyyy-MM-dd HH:mm:ss')}"/>
+</div>
 </body>
 
 <script type="text/javascript">
