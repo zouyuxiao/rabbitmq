@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>下载文件</h1>
+    <a href="/download/download">下载</a>
+    <form action="/download/download" enctype="application/x-www-form-urlencoded">
+        文件名：<input type="text" name="fileName" value="ERP系统.docx">
+        路径：<input type="text" name="filePath" value="D:\\test\\ERP系统.docx">
+        <input type="submit" value="提交">
+    </form>
+    <hr/>
+    <div id="file">
+
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>文件</td>
+                <td>路径</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/util.js"></script>
+<script>
+    $(function () {
+        var dataResult = getData("/download/lookup");
+        console.log("data------>"+JSON.stringify(dataResult));
+        /*
+        *   var dataArr = dataResult.data,
+            viewStr=analysisView(dataArr);
+            $("#file").html(viewStr);
+        *
+        * */
+        var fileName = dataResult.data.name;
+        var filePath = dataResult.data.path;
+        var viewStr=" ",path;
+
+        for (let i = 0; i < fileName.length; i++) {
+            for (let j = 0; j < filePath.length; j++) {
+                path = slash(filePath[i])
+                viewStr +=
+                    "<form action='/download/download'>" +
+                    "<input name='fileName' value='"+fileName[i]+"'/>" +
+                    "<input name='filePath' value='"+path+"' style='display: none;'/>" +
+                    // "<input value='下载' type='submit'/>" +
+                    "<button onclick='downloadFile(\" "+fileName[i]+"\",\" "+path+"\")'>下载</button>" +
+                    "</form>";
+                break;
+            }
+
+        }
+        $("#file").html(viewStr);
+
+        /*table 无法提交*/
+        /*$.each(dataArr,function(index,value){
+            viewStr += "<tr><td>"+value+"</td><td><a href='javascript:void(0);' onclick='download()'>下载</a></td></tr>"
+        });*/
+        /*for (let i = 0; i < fileName.length; i++) {
+            for (let j = 0; j < filePath.length; j++) {
+                path = slash(filePath[i])
+                /!*viewStr +=
+                    "<tr>" +
+                    "<td>"+fileName[i]+"</td>" +
+                    "<td><a href='javascrpt:void(0)' " +
+                    "onclick='downloadFile(\" "+fileName[i]+ "\",\" "+path+ "\")'>" +
+                    "下载</a></td>" +
+                    "</tr>";*!/
+                viewStr +=
+                    "<form action='/download/download'><tr>" +
+                    "<td><input name='fileName' value='"+fileName[i]+"'/></td>" +
+                    "<td><input name='filePath' value='"+path+"'/></td>" +
+                    // "<td><button onclick='downloadFile(\" "+fileName[i]+"\",\" "+path+"\")'>下载</button></td>" +
+                    "<td><input value='下载' type='submit'/></td>" +
+                    "</tr></form>";
+                break;
+            }
+
+        }
+        $("#file").html(viewStr);*/
+    });
+
+    function downloadFile(fileName,filePath) {
+        let url = "/download/download";
+        let data = {"fileName":fileName,"filePath":filePath};
+        let dataResult = postData(url,data);
+    }
+
+
+
+
+</script>
+</html>

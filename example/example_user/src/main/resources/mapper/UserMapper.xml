@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.user.dao.UserDao">
+    <resultMap id="userMap" type="com.example.user.bean.User">
+        <id property="id" column="id"/>
+        <result property="regTime" column="reg_time"/>
+    </resultMap>
+    <select id="list" resultType="com.example.user.bean.User" resultMap="userMap">
+        SELECT * FROM user
+    </select>
+
+    <select id="findById" resultType="com.example.user.bean.User" resultMap="userMap">
+        SELECT * FROM user where id=#{id}
+    </select>
+
+    <select id="findById2" resultType="com.example.user.bean.User" resultMap="userMap">
+        SELECT * FROM user where id=#{id}
+    </select>
+
+</mapper>
