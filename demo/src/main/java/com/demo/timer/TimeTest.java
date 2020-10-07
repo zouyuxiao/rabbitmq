@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description java当中的定时器的4种使用方式
@@ -17,7 +20,9 @@ public class TimeTest {
         //timer1();
         //timer2();
         //timer3();
-        timer4();
+        //timer4();
+        timer5();
+        timer6();
     }
 
     // 第一种方法：设定指定任务task在指定时间time执行 schedule(TimerTask task, Date time)
@@ -69,5 +74,35 @@ public class TimeTest {
             }
         }, time, 1000 * 60 * 60 * 24);// 这里设定将延时每天固定执行
     }
+
+    /**
+     * 这是java自带的java.util.Timer类，这个类允许你调度一个java.util.TimerTask任务。
+     *      使用这种方式可以让你的程序按照某一个频度执行，但不能在指定时间运行。一般用的较少。
+     */
+    public static void timer5() {
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("task  run:"+ new Date());
+            }
+        };
+        Timer timer = new Timer();
+        //安排指定的任务在指定的时间开始进行重复的固定延迟执行。这里是每3秒执行一次
+        timer.schedule(timerTask,10,3000);
+    }
+
+
+    /**
+     * ScheduledExecutorService：也jdk自带的一个类；是基于线程池设计的定时任务类,
+     * 每个调度任务都会分配到线程池中的一个线程去执行,也就是说,任务是并发执行,互不影响。
+     */
+    public static void timer6() {
+        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        // 参数：1、任务体 2、首次执行的延时时间
+        //      3、任务执行间隔 4、间隔时间单位
+        service.scheduleAtFixedRate(()->System.out.println("task ScheduledExecutorService "+new Date()),
+                0, 3, TimeUnit.SECONDS);
+    }
+
 
 }
