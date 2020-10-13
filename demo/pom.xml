@@ -45,6 +45,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--添加导入/出表格依赖-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
+
     </dependencies>
 
     <build>

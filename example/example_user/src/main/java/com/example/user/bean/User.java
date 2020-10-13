@@ -1,6 +1,8 @@
 package com.example.user.bean;
 
 
+import com.example.commom.annotation.Excel;
+
 import java.util.Date;
 
 /**
@@ -10,10 +12,15 @@ import java.util.Date;
  */
 
 public class User {
+    @Excel(name = "id")
     private Long id;
+    @Excel(name = "用户名")
     private String username;
+    @Excel(name = "密码")
     private String password;
+    @Excel(name = "年龄")
     private Integer age;
+    @Excel(name = "注册时间")
     private Date regTime;
 
     @Override

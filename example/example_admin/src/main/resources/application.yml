@@ -22,8 +22,13 @@ spring:
       #上传文件大小
       max-file-size: 50MB
       max-request-size: 50MB
+#  mvc:
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: classpath:/static/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
 
-
+  freemarker:
+    check-template-location: false
 
 # MyBatis
 mybatis:
@@ -37,5 +42,11 @@ mybatis:
     #打印sql(语句)，方便调试
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-
-
+# 防止XSS攻击
+xss:
+  # 过滤开关
+  enabled: true
+  # 排除链接（多个用逗号分隔）
+  excludes: /system/notice/*
+  # 匹配链接
+  urlPatterns: /system/*,/monitor/*,/tool/*,/base/*

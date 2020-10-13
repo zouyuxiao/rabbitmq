@@ -12,10 +12,9 @@ import java.util.Locale;
 
 /**
  * 资源文件配置加载
- * 
- * @author ruoyi
+ *
  */
-@Configuration
+//@Configuration
 public class I18nConfig implements WebMvcConfigurer
 {
     @Bean

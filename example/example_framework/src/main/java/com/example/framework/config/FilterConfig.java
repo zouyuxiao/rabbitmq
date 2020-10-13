@@ -16,7 +16,7 @@ import java.util.Map;
  *
  * @author ruoyi
  */
-@Configuration
+//@Configuration
 public class FilterConfig
 {
     @Value("${xss.enabled}")
