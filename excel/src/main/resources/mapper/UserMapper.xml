@@ -23,4 +23,18 @@
          INSERT INTO user(username,password,age,reg_time) VALUES (#{username},#{password},#{age},#{regTime})
     </insert>
 
+    <delete id="deleteAll">
+        delete from user where id in 
+        <foreach collection="list" open="(" close=")" item="item" separator="," index="index">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="findAllById" resultMap="userMap" resultType="User">
+        select id, username, password, age, reg_time from user where id in
+        <foreach collection="list" open="(" close=")" item="item" separator="," index="index">
+            #{item}
+        </foreach>
+    </select>
+
 </mapper>

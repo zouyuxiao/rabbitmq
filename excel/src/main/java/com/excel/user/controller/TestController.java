@@ -165,4 +165,64 @@ public class TestController extends BaseApiController {
         return successMsg.toString();
     }
 
+
+    /**
+     * 根据id批量删除
+     * @param ids
+     */
+    @RequestMapping("/batchDelete")
+    public Map<String,Object> batchDelete(String ids) {
+        String[] gpIds = ids.split(",");
+        List<Long> list = new ArrayList<>();
+        for(String str:gpIds){
+            list.add(Long.parseLong(str));
+        }
+        userService.deleteAll(list);
+        return onSuccessRep("ojbk");
+    }
+
+
+    /**
+     * 根据id批量查询
+     * @param ids
+     */
+    @RequestMapping("/batchList")
+    public Map<String,Object> batchList(String ids) {
+        /*String[] gpIds = ids.split(",");
+        List<Long> list = new ArrayList<>();
+        for(String str:gpIds){
+            list.add(Long.parseLong(str));
+        }*/
+//        List<User> users = userService.findAllById(list);
+        List<Long> list = batchListUtil(ids);
+        return onDataResp(userService.findAllById(list));
+    }
+
+    public List<Long> batchListUtil(String ids){
+        String[] gpIds = ids.split(",");
+        List<Long> list = new ArrayList<>();
+        for(String str:gpIds){
+            list.add(Long.parseLong(str));
+        }
+        return list;
+    }
+
+    // 根据id导出指定数据
+    @PostMapping("/exportBatchList")
+    public Map<String, Object> exportBatchList(HttpServletResponse response, HttpServletRequest request,String ids)
+    {
+        List<Long> listIds = batchListUtil(ids);
+        List<User> users = userService.findAllById(listIds);
+        System.out.println("users-->"+users);
+        List<User> list = new ArrayList<User>(users);
+        ExcelUtil<User> util = new ExcelUtil<User>(User.class);
+        AjaxResult jsonStr =  util.exportExcel(list, "用户数据");
+        JSONObject jsonObj = new JSONObject(jsonStr);
+        String fileName = jsonObj.getString("msg");
+        System.out.println(fileName);
+        CommonController commonController = new CommonController();
+        commonController.fileDownload(String.valueOf(fileName), true, response, request );
+        return onSuccessRep("成功");
+    }
+
 }

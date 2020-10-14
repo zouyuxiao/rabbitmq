@@ -9,6 +9,7 @@ spring:
   jackson:
     date-format: yyyy-MM-DD hh:mm:ss
     time-zone: GMT+
+    #serialization: false
   servlet:
     multipart:
       #上传文件大小

@@ -16,4 +16,8 @@ public interface UserService {
     List<User> findById(Long id);
     User findById2(Long id);
     long insert(User user);
+    // 批量删除
+    long deleteAll(List<Long> ids);
+    // 批量查询
+    List<User> findAllById(List<Long> ids);
 }
