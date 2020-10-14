@@ -6,19 +6,25 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/mq/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/cache/pom.xml" />
+        <option value="$PROJECT_DIR$/redis/pom.xml" />
+        <option value="$PROJECT_DIR$/commom/pom.xml" />
+        <option value="$PROJECT_DIR$/example/pom.xml" />
+        <option value="$PROJECT_DIR$/thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/webservice/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-template/pom.xml" />
+        <option value="$PROJECT_DIR$/visualization/pom.xml" />
+        <option value="$PROJECT_DIR$/webserviceclient/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/mq/pom.xml" />
-        <option value="$PROJECT_DIR$/redis/pom.xml" />
-        <option value="$PROJECT_DIR$/webservice/pom.xml" />
-        <option value="$PROJECT_DIR$/test/pom.xml" />
-        <option value="$PROJECT_DIR$/ret-template/pom.xml" />
-        <option value="$PROJECT_DIR$/commom/pom.xml" />
-        <option value="$PROJECT_DIR$/rest-template/pom.xml" />
-        <option value="$PROJECT_DIR$/webserviceclient/pom.xml" />
-        <option value="$PROJECT_DIR$/visualization/pom.xml" />
+        <option value="$PROJECT_DIR$/timer/pom.xml" />
+        <option value="$PROJECT_DIR$/swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/poi/pom.xml" />
+        <option value="$PROJECT_DIR$/excel/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

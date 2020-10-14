@@ -1,0 +1,496 @@
+文件夹 PATH 列表
+├─.idea
+│  ├─dataSources
+│  │  └─56c86e57-94f7-4b3c-8f4b-6d3d32114a72
+│  │      └─storage_v2
+│  │          └─_src_
+│  │              └─schema
+│  └─libraries
+├─cache 缓存
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─doc
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─cache
+│  │  │  │          ├─bean
+│  │  │  │          ├─controller
+│  │  │  │          ├─dao
+│  │  │  │          └─service
+│  │  │  │              └─impl
+│  │  │  └─resources
+│  │  │      └─mapper
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─cache
+
+├─commom 通用工具
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─commom
+│  │  │  │          ├─controller
+│  │  │  │          └─util
+│  │  │  └─resources
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─commom
+├─demo
+│  ├─.idea
+│  │  └─libraries
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─demo
+│  │  │  │          ├─enums 枚举
+│  │  │  │          ├─lamdba lamdba表达式
+│  │  │  │          └─timer 定时器
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─demo
+
+├─doc
+├─echarts 可视化案例
+│  └─echarts-
+│      ├─1
+│      │  ├─css
+│      │  ├─img
+│      │  └─js
+│      ├─10
+│      │  └─assets
+│      │      ├─css
+│      │      │  └─common
+│      │      └─js
+│      │          ├─common
+│      │          ├─echarts
+│      │          └─map
+│      ├─11
+│      │  ├─css
+│      │  └─js
+│      ├─12
+│      │  ├─css
+│      │  ├─img
+│      │  ├─js
+│      │  └─page
+│      │      └─img
+│      ├─13
+│      │  ├─css
+│      │  │  └─imgs
+│      │  ├─img
+│      │  └─js
+│      ├─2
+│      │  ├─css
+│      │  │  └─zTreeStyle
+│      │  │      └─img
+│      │  │          └─diy
+│      │  ├─fonts
+│      │  ├─images
+│      │  │  └─mapIcon
+│      │  ├─img
+│      │  │  └─images
+│      │  ├─js
+│      │  │  ├─artDialog
+│      │  │  │  ├─plugins
+│      │  │  │  └─skins
+│      │  │  │      ├─aero
+│      │  │  │      │  └─ie6
+│      │  │  │      ├─black
+│      │  │  │      │  └─ie6
+│      │  │  │      ├─blue
+│      │  │  │      │  └─ie6
+│      │  │  │      ├─chrome
+│      │  │  │      ├─green
+│      │  │  │      │  └─ie6
+│      │  │  │      ├─icons
+│      │  │  │      ├─idialog
+│      │  │  │      │  └─ie6
+│      │  │  │      └─opera
+│      │  │  │          └─ie6
+│      │  │  ├─bstable
+│      │  │  │  ├─.idea
+│      │  │  │  ├─css
+│      │  │  │  ├─datel
+│      │  │  │  ├─fonts
+│      │  │  │  └─js
+│      │  │  ├─demo
+│      │  │  ├─need
+│      │  │  ├─skins
+│      │  │  │  ├─dahong
+│      │  │  │  ├─danlan
+│      │  │  │  ├─default
+│      │  │  │  ├─molv
+│      │  │  │  ├─qianhuang
+│      │  │  │  ├─yahui
+│      │  │  │  └─yalan
+│      │  │  ├─tdlib
+│      │  │  └─ztree
+│      │  ├─json
+│      │  └─video
+│      ├─3
+│      │  ├─css
+│      │  ├─fonts
+│      │  ├─images
+│      │  └─js
+│      ├─4
+│      │  ├─css
+│      │  ├─fonts
+│      │  ├─images
+│      │  └─js
+│      ├─5
+│      │  ├─fonts
+│      │  ├─images
+│      │  ├─scripts
+│      │  │  └─Plugin
+│      │  │      └─laydate
+│      │  │          └─theme
+│      │  │              └─default
+│      │  │                  └─font
+│      │  ├─styles
+│      │  └─views
+│      ├─6
+│      │  ├─css
+│      │  ├─img
+│      │  └─js
+│      ├─7
+│      │  ├─css
+│      │  │  └─imgs
+│      │  ├─img
+│      │  └─js
+│      ├─8
+│      │  └─images
+│      ├─9
+│      │  ├─css
+│      │  │  └─font
+│      │  ├─images
+│      │  ├─js
+│      │  └─less
+│      └─效果图
+├─example 分布式
+│  ├─.idea
+│  │  ├─artifacts
+│  │  ├─dataSources
+│  │  │  └─db277d14-6eae-4c53-a18f-a659ba84f0b4
+│  │  │      └─storage_v2
+│  │  │          └─_src_
+│  │  │              └─schema
+│  │  └─libraries
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─example_admin
+│  │  ├─.mvn
+│  │  │  └─wrapper
+│  │  ├─src
+│  │  │  ├─main
+│  │  │  │  ├─java
+│  │  │  │  │  └─com
+│  │  │  │  │      └─example
+│  │  │  │  │          └─admin
+│  │  │  │  │              ├─bean
+│  │  │  │  │              ├─config
+│  │  │  │  │              └─controller
+│  │  │  │  └─resources
+│  │  │  │      ├─mapper
+│  │  │  │      ├─static
+│  │  │  │      │  ├─css
+│  │  │  │      │  ├─img
+│  │  │  │      │  └─js
+│  │  │  │      └─templates
+│  │  │  │          ├─test
+│  │  │  │          └─thymeleaf
+│  │  │  └─test
+│  │  │      └─java
+│  │  │          └─com
+│  │  │              └─example
+│  │  │                  └─user
+│  ├─example_commom
+│  │  ├─.mvn
+│  │  │  └─wrapper
+│  │  ├─src
+│  │  │  ├─main
+│  │  │  │  ├─java
+│  │  │  │  │  └─com
+│  │  │  │  │      └─example
+│  │  │  │  │          └─commom
+│  │  │  │  │              ├─config
+│  │  │  │  │              │  └─datasource
+│  │  │  │  │              ├─controller
+│  │  │  │  │              ├─enums
+│  │  │  │  │              ├─text
+│  │  │  │  │              ├─utils
+│  │  │  │  │              │  └─html
+│  │  │  │  │              └─xss
+│  │  │  │  └─resources
+│  │  │  │      ├─mapper
+│  │  │  │      └─templates
+│  │  │  └─test
+│  │  │      └─java
+│  │  │          └─com
+│  │  │              └─example
+│  │  │                  └─commom
+
+│  ├─example_framework
+│  │  ├─.mvn
+│  │  │  └─wrapper
+│  │  ├─src
+│  │  │  ├─main
+│  │  │  │  ├─java
+│  │  │  │  │  └─com
+│  │  │  │  │      └─example
+│  │  │  │  │          └─framework
+│  │  │  │  │              ├─config
+│  │  │  │  │              │  └─properties
+│  │  │  │  │              └─datasource
+│  │  │  │  └─resources
+│  │  │  │      └─mapper
+│  │  │  └─test
+│  │  │      └─java
+│  │  │          └─com
+│  │  │              └─example
+│  │  │                  └─framework
+│  │  └─target
+│  │      ├─classes
+│  │      │  └─com
+│  │      │      └─example
+│  │      │          └─framework
+│  │      │              ├─config
+│  │      │              │  └─properties
+│  │      │              └─datasource
+│  │      ├─generated-sources
+│  │      │  └─annotations
+│  │      ├─maven-archiver
+│  │      └─maven-status
+│  │          └─maven-compiler-plugin
+│  │              ├─compile
+│  │              │  └─default-compile
+│  │              └─testCompile
+│  │                  └─default-testCompile
+│  └─example_user
+│      ├─.mvn
+│      │  └─wrapper
+│      ├─src
+│      │  ├─main
+│      │  │  ├─java
+│      │  │  │  └─com
+│      │  │  │      └─example
+│      │  │  │          └─user
+│      │  │  │              ├─bean
+│      │  │  │              ├─controller
+│      │  │  │              ├─dao
+│      │  │  │              └─service
+│      │  │  │                  └─impl
+│      │  │  └─resources
+│      │  │      ├─mapper
+│      │  │      └─templates
+│      │  │          └─user
+│      │  └─test
+│      │      └─java
+│      │          └─com
+│      │              └─example
+│      │                  └─user
+├─mq rabbitMq
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─mq
+│  │  │  │          ├─consumer
+│  │  │  │          │  ├─direct
+│  │  │  │          │  ├─fanout
+│  │  │  │          │  ├─hello
+│  │  │  │          │  ├─helloqueue
+│  │  │  │          │  └─workqueue
+│  │  │  │          ├─prodive
+│  │  │  │          │  ├─direct
+│  │  │  │          │  ├─fanout
+│  │  │  │          │  ├─hello
+│  │  │  │          │  ├─helloqueue
+│  │  │  │          │  └─workqueue
+│  │  │  │          └─util
+│  │  │  └─resources
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─mq
+├─rabbitmq-consumer
+│  ├─.idea
+│  │  └─libraries
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─mq
+│  │  │  │          └─demo
+│  │  │  │              ├─config
+│  │  │  │              ├─controller
+│  │  │  │              └─receiver
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─mq
+│  │                  └─demo
+
+├─rabbitmq-provider
+│  ├─.idea
+│  │  └─libraries
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─lib
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─mq
+│  │  │  │          └─demo
+│  │  │  │              ├─config
+│  │  │  │              ├─controller
+│  │  │  │              └─receiver
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+
+├─redis
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─redis
+│  │  │  │          ├─bean
+│  │  │  │          ├─config
+│  │  │  │          ├─controller
+│  │  │  │          └─util
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─redis
+
+├─rest-template  访问远程Http服务
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─restTemplate
+│  │  │  │          ├─config
+│  │  │  │          ├─controller
+│  │  │  │          └─util
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─restTemplate
+
+├─thymeleaf thymeleaf模板引擎
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─doc
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─thymeleaf
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─thymeleaf
+
+├─visualization 可视化图表
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─visualization
+│  │  │  │          ├─bean
+│  │  │  │          ├─config
+│  │  │  │          ├─controller
+│  │  │  │          ├─dao
+│  │  │  │          ├─service
+│  │  │  │          │  └─impl
+│  │  │  │          └─test
+│  │  │  └─resources
+│  │  │      ├─mapper
+│  │  │      ├─static
+│  │  │      │  ├─css
+│  │  │      │  ├─img
+│  │  │      │  └─js
+│  │  │      └─templates
+│  │  │          ├─hello
+│  │  │          ├─test
+│  │  │          └─thymeleaf thymeleaf模板引擎
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─visualization
+
+├─webservice
+│  ├─.mvn
+│  │  └─wrapper
+│  ├─src
+│  │  ├─main
+│  │  │  ├─java
+│  │  │  │  └─com
+│  │  │  │      └─webservice
+│  │  │  │          ├─bean
+│  │  │  │          ├─config
+│  │  │  │          ├─controller
+│  │  │  │          ├─dao
+│  │  │  │          └─service
+│  │  │  │              └─impl
+│  │  │  └─resources
+│  │  │      ├─static
+│  │  │      └─templates
+│  │  └─test
+│  │      └─java
+│  │          └─com
+│  │              └─webservice
+
+└─webserviceclient
+    ├─.mvn
+    │  └─wrapper
+    ├─src
+    │  ├─main
+    │  │  ├─java
+    │  │  │  └─com
+    │  │  │      └─webserviceclient
+    │  │  │          └─controller
+    │  │  └─resources
+    │  └─test
+    │      └─java
+    │          └─com
+    │              └─webserviceclient
+

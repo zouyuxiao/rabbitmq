@@ -1,0 +1,32 @@
+#端口
+server:
+  port: 8881
+spring:
+  # 数据源
+  profiles:
+    active: druid
+  # 时间戳
+  jackson:
+    date-format: yyyy-MM-DD hh:mm:ss
+    time-zone: GMT+
+  servlet:
+    multipart:
+      #上传文件大小
+      max-file-size: 50MB
+      max-request-size: 50MB
+  mvc:
+    static-path-pattern: /**
+    view:
+      suffix: .html
+
+# MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.excel.user.bean
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  configuration:
+    #开启驼峰命名转换
+    map-underscore-to-camel-case: true
+    #打印sql(语句)，方便调试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

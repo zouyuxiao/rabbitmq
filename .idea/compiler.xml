@@ -6,52 +6,71 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="timer" />
         <module name="redis" />
-        <module name="visualization" />
-        <module name="rest-template" />
-        <module name="test" />
-        <module name="webserviceclient" />
-        <module name="commom" />
-        <module name="rabbitmq-provider" />
-        <module name="mq" />
-        <module name="rabbitmq-consumer" />
-        <module name="rabbit-provider" />
+        <module name="demo" />
+        <module name="excel" />
+        <module name="thymeleaf" />
+        <module name="example_user" />
         <module name="webservice" />
-        <module name="web-service-client" />
+        <module name="cache" />
+        <module name="test" />
+        <module name="provider" />
+        <module name="example_commom" />
+        <module name="visualization" />
+        <module name="example_swagger" />
+        <module name="example_framework" />
+        <module name="mq" />
+        <module name="webserviceclient" />
+        <module name="poi" />
+        <module name="swagger" />
         <module name="consumer" />
+        <module name="example-admin" />
+        <module name="commom" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cache" target="1.8" />
       <module name="commom" target="1.8" />
       <module name="consumer" target="1.8" />
-      <module name="HttpClientDemo" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="example" target="1.5" />
+      <module name="example-admin" target="7" />
+      <module name="example_commom" target="7" />
+      <module name="example_framework" target="8" />
+      <module name="example_swagger" target="1.5" />
+      <module name="example_user" target="6" />
+      <module name="excel" target="1.8" />
       <module name="mq" target="1.8" />
-      <module name="rabbit-provider" target="1.8" />
-      <module name="rabbitmq-consumer" target="1.8" />
-      <module name="rabbitmq-provider" target="1.8" />
+      <module name="poi" target="1.8" />
+      <module name="provider" target="1.8" />
       <module name="redis" target="1.8" />
-      <module name="rest-template" target="1.8" />
+      <module name="swagger" target="1.8" />
       <module name="test" target="1.8" />
+      <module name="thymeleaf" target="1.8" />
+      <module name="timer" target="1.8" />
       <module name="visualization" target="1.8" />
-      <module name="web-service-client" target="1.8" />
       <module name="webservice" target="1.8" />
       <module name="webserviceclient" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="HttpClientDemo" options="-parameters" />
+      <module name="cache" options="-parameters" />
       <module name="commom" options="-parameters" />
       <module name="consumer" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="example_swagger" options="" />
+      <module name="excel" options="-parameters" />
       <module name="mq" options="-parameters" />
-      <module name="rabbit-provider" options="-parameters" />
-      <module name="rabbitmq-consumer" options="-parameters" />
-      <module name="rabbitmq-provider" options="-parameters" />
+      <module name="poi" options="-parameters" />
+      <module name="provider" options="-parameters" />
       <module name="redis" options="-parameters" />
-      <module name="rest-template" options="-parameters" />
+      <module name="swagger" options="-parameters" />
       <module name="test" options="-parameters" />
+      <module name="thymeleaf" options="-parameters" />
+      <module name="timer" options="-parameters" />
       <module name="visualization" options="-parameters" />
-      <module name="web-service-client" options="-parameters" />
       <module name="webservice" options="-parameters" />
       <module name="webserviceclient" options="-parameters" />
     </option>
