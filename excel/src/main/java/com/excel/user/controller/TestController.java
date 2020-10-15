@@ -37,9 +37,10 @@ public class TestController extends BaseApiController {
     }
 
     // 导出数据
-    @GetMapping("/export")
+    @GetMapping(value = "/export",headers = "Accept=application/json")
     public Map<String, Object> export(HttpServletResponse response, HttpServletRequest request)
     {
+        response.addHeader("Content-Type", "application/json;charset=UTF-8");
         List<User> users = userService.list();
         System.out.println("users-->"+users);
         List<User> list = new ArrayList<User>(users);
