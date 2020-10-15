@@ -7,12 +7,11 @@ import com.visualization.service.TokenService;
 import com.visualization.service.UserService;
 import com.visualization.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,7 +40,7 @@ public class TokenController extends BaseApiController{
             cookie.setPath("/");
             response.addCookie(cookie);
             jsonObject.put("token", token);
-            return jsonObject;
+            return onDataResp(jsonObject);
         }
         return onBadResp("登录失败");
     }
@@ -59,6 +58,13 @@ public class TokenController extends BaseApiController{
         System.out.println(TokenUtil.getTokenUserId());
 
         return onSuccessRep("您已通过验证");
+    }
+
+    @UserLoginToken
+    @GetMapping("/list")
+    public Map<String,Object> list(){
+        List<User> list = userService.list();
+        return onDataResp(list);
     }
 
 }
