@@ -13,6 +13,12 @@ import java.util.List;
 
 public interface UserService {
     List<User> list();
+
     List<User> findById(Long id);
+
     User findById2(Long id);
+
+    User login(String username,String password);
+
+    User findUserById(Long id);
 }
