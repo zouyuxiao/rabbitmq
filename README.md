@@ -17,7 +17,7 @@ webservice 跨平台获取数据
 cache缓存
 
 thymeleaf
-visualization 模板引擎
+visualization 模板引擎 token登录认证
 
 Demo   
 └─demo  
