@@ -19,4 +19,14 @@
         SELECT * FROM user where id=#{id}
     </select>
 
+    <select id="login" resultType="User" resultMap="userMap">
+        SELECT id, username, password, age, reg_time
+        FROM user
+        where username=#{username} and password=#{password}
+    </select>
+
+    <select id="findUserById" resultType="User" resultMap="userMap">
+        SELECT id, username, password, age, reg_time FROM user where id=#{id}
+    </select>
+
 </mapper>
