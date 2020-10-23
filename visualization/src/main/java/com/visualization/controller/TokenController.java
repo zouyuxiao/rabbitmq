@@ -61,6 +61,7 @@ public class TokenController extends BaseApiController{
 
         return onSuccessRep("您已通过验证");
     }
+
     @UserLoginToken
     @GetMapping("/list")
     public Map<String,Object> list(){

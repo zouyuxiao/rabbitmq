@@ -88,6 +88,13 @@
             <version>1.2.73</version>
         </dependency>
 
+        <!--oracle驱动-->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.4.0</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -100,5 +107,17 @@
         </plugins>
 
     </build>
+    <repositories>
+        <!--oracle驱动没有发布到中央仓库，只能从此仓库下载-->
+        <repository>
+            <id>jeecg</id>
+            <name>jeecg Repository</name>
+            <url>http://maven.jeewx.com/nexus/content/repositories/jeecg</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
 </project>

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SwaggerController extends BaseApiController {
     @RequestMapping("/swagger")
     public String swagger(){
-        return "/swagger-ui.html";
+        return "redirect:/swagger-ui.html";
     }
 
     @GetMapping("/swaggerTest")

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.redis.dao.TScrmMemberDao">
+    
+    <resultMap type="TScrmMember" id="TScrmMemberResult">
+        <result property="memberid"    column="memberid"    />
+        <result property="membername"    column="membername"    />
+        <result property="mobile"    column="mobile"    />
+        <result property="membercode"    column="membercode"    />
+        <result property="birthday"    column="birthday"    />
+        <result property="age"    column="age"    />
+        <result property="tel"    column="tel"    />
+        <result property="email"    column="email"    />
+        <result property="idcard"    column="idcard"    />
+        <result property="sex"    column="sex"    />
+        <result property="staffFlag"    column="staff_flag"    />
+        <result property="staffEmpid"    column="staff_empid"    />
+        <result property="cardno"    column="cardno"    />
+        <result property="cardtypeid"    column="cardtypeid"    />
+        <result property="points"    column="points"    />
+        <result property="pointsYear"    column="points_year"    />
+        <result property="pointsTotal"    column="points_total"    />
+        <result property="amountYear"    column="amount_year"    />
+        <result property="amountTotal"    column="amount_total"    />
+        <result property="lastsalesdate"    column="lastsalesdate"    />
+        <result property="crepoint"    column="crepoint"    />
+        <result property="credate"    column="credate"    />
+        <result property="creterid"    column="creterid"    />
+        <result property="usestatus"    column="usestatus"    />
+        <result property="comefrom"    column="comefrom"    />
+        <result property="onlineflag"    column="onlineflag"    />
+        <result property="country"    column="country"    />
+        <result property="province"    column="province"    />
+        <result property="city"    column="city"    />
+        <result property="district"    column="district"    />
+        <result property="address"    column="address"    />
+        <result property="sourceid"    column="sourceid"    />
+        <result property="memo"    column="memo"    />
+        <result property="insdate"    column="insdate"    />
+        <result property="preEntryid"    column="pre_entryid"    />
+        <result property="prePointid"    column="pre_pointid"    />
+        <result property="prePostid"    column="pre_postid"    />
+        <result property="preEmpid"    column="pre_empid"    />
+        <result property="wcServiceid"    column="wc_serviceid"    />
+        <result property="openid"    column="openid"    />
+        <result property="unionid"    column="unionid"    />
+        <result property="binddate"    column="binddate"    />
+        <result property="bindEmpid"    column="bind_empid"    />
+        <result property="bindComefrom"    column="bind_comefrom"    />
+        <result property="typeCycle"    column="type_cycle"    />
+        <result property="typeGross"    column="type_gross"    />
+        <result property="typeRfm"    column="type_rfm"    />
+    </resultMap>
+
+
+    <sql id="selectTScrmMemberVo">
+        select a.memberid,
+               a.membername,
+               a.mobile,
+               a.membercode,
+               a.birthday,
+               a.age,
+               a.tel,
+               a.email,
+               a.idcard,
+               a.sex,
+               a.staff_flag,
+               a.staff_empid,
+               a.cardno,
+               b.cardtypeid,
+               b.cardtype,
+               a.points,
+               a.points_year,
+               a.points_total,
+               a.amount_year,
+               a.amount_total,
+               a.lastsalesdate,
+               c.store_id crepoint,
+               c.store_name crepointName,
+               a.credate,
+               a.creterid,
+               a.usestatus,
+               a.comefrom,
+               a.onlineflag,
+               a.country,
+               a.province,
+               a.city,
+               a.district,
+               a.address,
+               a.sourceid,
+               a.memo,
+               a.insdate,
+               a.pre_entryid,
+               a.pre_pointid,
+               a.pre_postid,
+               a.pre_empid,
+               a.wc_serviceid,
+               a.openid,
+               a.unionid,
+               a.binddate,
+               a.bind_empid,
+               a.bind_comefrom,
+               a.type_cycle,
+               a.type_gross,
+               a.type_rfm
+          from t_scrm_member a
+          left join t_scrm_member_cardtype b on a.cardtypeid = b.cardtypeid
+          left join t_scrm_store c on a.crepoint = c.store_id
+    </sql>
+
+    <select id="selectTScrmMemberList" parameterType="TScrmMember" resultMap="TScrmMemberResult">
+        <include refid="selectTScrmMemberVo"/>
+        <where>
+            <if test="memberid != null "> and a.memberid = #{memberid}</if>
+            <if test="membername != null  and membername != ''"> and a.membername like concat(concat('%', #{membername}), '%')</if>
+            <if test="mobile != null  and mobile != ''"> and a.mobile = #{mobile}</if>
+            <if test="cardno != null  and cardno != ''"> and a.cardno = #{cardno}</if>
+            <if test="cardtypeid != null "> and a.cardtypeid = #{cardtypeid}</if>
+            <if test="usestatus != null "> and a.usestatus = #{usestatus}</if>
+            <if test="wcServiceid != null "> and a.wc_serviceid = #{wcServiceid}</if>
+            <if test="openid != null  and openid != ''"> and a.openid = #{openid}</if>
+            <if test="unionid != null  and unionid != ''"> and a.unionid = #{unionid}</if>
+            <if test="typeCycle != null "> and a.type_cycle = #{typeCycle}</if>
+            <if test="typeGross != null "> and a.type_gross = #{typeGross}</if>
+            <if test="typeRfm != null "> and a.type_rfm = #{typeRfm}</if>
+        </where>
+    </select>
+
+    <select id="listPage" parameterType="TScrmMember" resultMap="TScrmMemberResult">
+        select * from (select t.*,rownum rownu from t_scrm_member t
+                       where rownum&lt;=#{num}*#{size})tt
+        where tt.rownu>(#{num}-1)*#{size}
+    </select>
+
+
+</mapper>

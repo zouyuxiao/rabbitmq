@@ -1,29 +1,27 @@
 package com.example.admin.config;
 
+import com.example.commom.config.Global;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.WebMvcRequestHandler;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Description Swagger 配置
- * @Author zouyuxiao
- * @Date 2020-10-08 10:00
+ * Swagger2的接口配置
+ * 
+ * @author ruoyi
  */
-
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig{
+public class SwaggerConfig
+{
     /**
      * 创建API
      */
@@ -52,14 +50,13 @@ public class SwaggerConfig{
         // 用ApiInfoBuilder进行定制
         return new ApiInfoBuilder()
                 // 设置标题
-                .title("标题：springboot整合swagger")
+                .title("标题：example接口文档")
                 // 描述
-                .description("描述：测试")
+                .description("描述：springboot单体多模块集成swagger")
                 // 作者信息
-                .contact(new Contact("zouyuxiao", "https://github.com/zouyuxiao", "1987196944@qq.com"))
+                .contact(new Contact("zouyuxiao", null, "1987196944@qq.com"))
                 // 版本
-                .version("9.0")
+                .version("版本号:" + "1.0")
                 .build();
     }
-
 }
