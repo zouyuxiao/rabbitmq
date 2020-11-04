@@ -17,7 +17,7 @@ webservice 跨平台获取数据
 cache缓存
 
 thymeleaf
-visualization 模板引擎 token登录认证
+visualization 模板引擎 token登录认证 localStorage sessionStorage 存值
 
 Demo   
 └─demo  
@@ -33,3 +33,6 @@ swagger 接口文档
 poi excel文档
   
 excel   文档
+  
+example 单体多模块  
+ 集成swagger要把swagger-ui.html文件放在  template静态文件根目录下

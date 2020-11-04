@@ -6,6 +6,7 @@
         <artifactId>example</artifactId>
         <groupId>com.example</groupId>
         <version>4.1.0</version>
+        <relativePath/>
     </parent>
 
     <artifactId>example_commom</artifactId>

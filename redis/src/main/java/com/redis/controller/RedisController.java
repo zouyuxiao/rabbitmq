@@ -4,6 +4,8 @@ import com.redis.bean.Redis;
 import com.redis.bean.TScrmMember;
 import com.redis.service.ITScrmMemberService;
 import com.redis.util.RedisUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +24,12 @@ import java.util.List;
  * @Date 2020-09-21 10:36
  */
 
-@Slf4j
 @RequestMapping("/redis")
 @RestController
 public class RedisController {
 
     private static int ExpireTime = 60;   // redis中存储的过期时间60s
+    private static final Logger log = LoggerFactory.getLogger(RedisController.class);
 
     @Resource
     private RedisUtil redisUtil;
@@ -68,7 +70,12 @@ public class RedisController {
     @ResponseBody
     public List<TScrmMember> list(TScrmMember tScrmMember)
     {
+        long startTime = System.currentTimeMillis();
         List<TScrmMember> list = tScrmMemberService.selectTScrmMemberList(tScrmMember);
+        redisUtil.set("member", list);
+        long endTime = System.currentTimeMillis();
+        long time = endTime - startTime;
+        System.out.println("执行时间为---》"+time);
         return list;
     }
 
@@ -82,7 +89,7 @@ public class RedisController {
         redisUtil.set("memberListPage", list);
         long endTime = System.currentTimeMillis();
         long time = endTime - startTime;
-        System.out.println("执行时间为---》"+time);
+        log.info("执行时间为---》"+time);
         return list;
     }
 

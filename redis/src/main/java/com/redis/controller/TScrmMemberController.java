@@ -1,10 +1,12 @@
 package com.redis.controller;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.redis.bean.TScrmMember;
 import com.redis.service.ITScrmMemberService;
+import com.redis.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +22,8 @@ import java.util.List;
 public class TScrmMemberController
 {
     private String prefix = "mem/member";
+    @Autowired
+    private RedisUtil redisUtil;
 
     @Autowired
     private ITScrmMemberService tScrmMemberService;
@@ -42,6 +46,14 @@ public class TScrmMemberController
     {
         List<TScrmMember> list = tScrmMemberService.listPage(size, num);
         return list;
+    }
+
+    @RequestMapping("/listPage2")
+    public PageInfo<TScrmMember> listPage2(@RequestParam(defaultValue = "1")Integer num, @RequestParam(defaultValue = "10")Integer size,
+                                           TScrmMember tScrmMember){
+        PageHelper.startPage(num,size);
+        List<TScrmMember> list = (List<TScrmMember>) redisUtil.get("member");
+        return new PageInfo<TScrmMember>(list);
     }
 
 
