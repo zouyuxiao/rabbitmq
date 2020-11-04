@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/search" />
+  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
@@ -23,6 +26,7 @@
         <option value="$PROJECT_DIR$/swagger/pom.xml" />
         <option value="$PROJECT_DIR$/poi/pom.xml" />
         <option value="$PROJECT_DIR$/excel/pom.xml" />
+        <option value="$PROJECT_DIR$/search/pom.xml" />
       </list>
     </option>
   </component>
